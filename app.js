@@ -64,7 +64,9 @@ app.use("/css", express.static(path.join(__dirname, "public/css")));
 app.use("/js", express.static(path.join(__dirname, "public/js")));
 
 
-
+app.get("/",(req,res) => {
+  res.send("Hello API");
+})
 
 
 // mail-service option
