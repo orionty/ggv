@@ -28,7 +28,7 @@ transporter.verify(function (error, success) {
 });
 
 
-const port = 3001
+const PORT = process.env.PORT || 3001;
 
 const app = express()
 app.use(cors())
@@ -157,4 +157,6 @@ app.post("/mail", (req, res, next) => {
 });
 
 
-app.listen(port, ()=> console.log('Listening on port 3001'))
+app.listen(PORT, () => {
+  console.log(`Listening on http://localhost:${PORT}`);
+});
