@@ -119,20 +119,20 @@ app.post("/mail-service", (req, res,next) => {
 app.post("/send/mail", (req, res,next) => {
   console.log(req.body);
 
-  //transporter
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user:process.env.EMAIL,
-      pass:process.env.PASSWORD,
-    },
-  });
+//   //transporter
+//   const transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user:process.env.EMAIL,
+//       pass:process.env.PASSWORD,
+//     },
+//   });
 
   const message = `Name: ${req.body.name} \n\n Email: ${req.body.ContactEmail} \n\n Message: ${req.body.message}`;
   //mailOption
   const mailOption = {
-    from: process.env.EMAIL,
-    to: req.body.ContactEmail,
+    from: req.body.ContactEmail ,
+    to: process.env.EMAIL ,
     text: message,
   };
   //sendMail
