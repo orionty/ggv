@@ -70,7 +70,7 @@ app.get("/",(req,res) => {
 
 
 // mail-service option
-app.post("/mail-service", (req, res) => {
+app.post("/mail-service", (req, res,next) => {
   console.log(req.body);
 
   //transporter
@@ -102,7 +102,7 @@ app.post("/mail-service", (req, res) => {
 });
 
 // email option
-app.post("/send/mail", (req, res) => {
+app.post("/send/mail", (req, res,next) => {
   console.log(req.body);
 
   //transporter
